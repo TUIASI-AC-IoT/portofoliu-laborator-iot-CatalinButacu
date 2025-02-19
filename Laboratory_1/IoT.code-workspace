@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "D:/Facultate/IoT"
+		},
+		{
+			"name": "init",
+			"path": "D:/Facultate/IoT/init"
+		},
+		{
+			"name": "SETUP_WROVER",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}
