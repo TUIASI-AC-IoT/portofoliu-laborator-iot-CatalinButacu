@@ -1,0 +1,83 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "IoT L12 - Temperature Sensor API",
+    "description": "A simplified RESTful API for interfacing with an ESP32 microcontroller running a temperature simulation",
+    "version": "1.0.0"
+  },
+  "basePath": "/",
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/temperature": {
+      "get": {
+        "summary": "Get current temperature reading",
+        "description": "Returns the current temperature value",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "number",
+                  "format": "float",
+                  "example": 25.5
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/control/{action}": {
+      "post": {
+        "summary": "Control heater/cooler functions",
+        "description": "Sends a command to control the heater, cooler, or stop both",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "action",
+            "in": "path",
+            "description": "Action to perform (heater, cooler, or stop)",
+            "required": true,
+            "type": "string",
+            "enum": ["heater", "cooler", "stop"]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Heater activated"
+                },
+                "response": {
+                  "type": "string",
+                  "example": "OK"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid action",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "string",
+                  "example": "Invalid action. Use 'heater', 'cooler', or 'stop'"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

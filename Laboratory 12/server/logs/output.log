@@ -1,0 +1,922 @@
+PS D:\Facultate\Master\IoT\IoT_l12> & E:/Frameworks/Python/python.exe d:/Facultate/Master/IoT/IoT_l12/server/server.py
+Available serial ports:
+  COM3: Standard Serial over Bluetooth link (COM3)
+  COM4: Standard Serial over Bluetooth link (COM4)
+  COM11: USB Serial Port (COM11)
+  COM12: USB Serial Port (COM12)
+Attempting to connect to COM12 at 115200 baud...
+Connected to COM12 at 115200 baud
+Data available in buffer: 1 bytes
+Test read: ''
+Sending GET command to ESP32
+Sensor reading thread started
+ * Serving Flask app 'server' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://192.168.58.161:5000/ (Press CTRL+C to quit)
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending command to ESP32: 'HEATER'
+Received response from ESP32: 'HEATER'
+192.168.58.161 - - [28/May/2025 19:16:59] "POST /control/heater HTTP/1.1" 200 -
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+192.168.58.161 - - [28/May/2025 19:17:42] "GET /temperature HTTP/1.1" 200 -
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+192.168.58.161 - - [28/May/2025 19:17:43] "GET /temperature HTTP/1.1" 200 -
+192.168.58.161 - - [28/May/2025 19:17:44] "GET /temperature HTTP/1.1" 200 -
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending command to ESP32: 'STOP'
+Received response from ESP32: 'STOP'
+192.168.58.161 - - [28/May/2025 19:17:50] "POST /control/stop HTTP/1.1" 200 -
+Sending GET command to ESP32
+Raw response from ESP32: 'OK'
+No temperature value found in response: 'OK'
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending command to ESP32: 'HEATER'
+Received response from ESP32: 'HEATER'
+192.168.58.161 - - [28/May/2025 19:20:17] "POST /control/heater HTTP/1.1" 200 -
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending command to ESP32: 'HEATER'
+Sending GET command to ESP32
+Received response from ESP32: 'HEATER'
+192.168.58.161 - - [28/May/2025 19:21:35] "POST /control/heater HTTP/1.1" 200 -
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Closing serial port...
+PS D:\Facultate\Master\IoT\IoT_l12> & E:/Frameworks/Python/python.exe d:/Facultate/Master/IoT/IoT_l12/server/server.py
+Available serial ports:
+  COM3: Standard Serial over Bluetooth link (COM3)
+  COM4: Standard Serial over Bluetooth link (COM4)
+  COM11: USB Serial Port (COM11)
+  COM12: USB Serial Port (COM12)
+Attempting to connect to COM12 at 115200 baud...
+Connected to COM12 at 115200 baud
+Data available in buffer: 1 bytes
+Test read: ''
+Sending GET command to ESP32
+Sensor reading thread started
+ * Serving Flask app 'server' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://192.168.58.161:5000/ (Press CTRL+C to quit)
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: 'Received command: 'GET''
+No temperature value found in response: 'Received command: 'GET''
+Sending GET command to ESP32
+Raw response from ESP32: '18.00'
+Temperature updated to: 18.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+192.168.58.161 - - [28/May/2025 19:26:52] "GET /swagger/ HTTP/1.1" 200 -
+Raw response from ESP32: 'Received command: 'GET''
+No temperature value found in response: 'Received command: 'GET''
+192.168.58.161 - - [28/May/2025 19:26:53] "GET /swagger/swagger-ui-bundle.js HTTP/1.1" 304 -
+192.168.58.161 - - [28/May/2025 19:26:53] "GET /swagger/swagger-ui-standalone-preset.js HTTP/1.1" 304 -
+192.168.58.161 - - [28/May/2025 19:26:53] "GET /swagger/index.css HTTP/1.1" 304 -
+192.168.58.161 - - [28/May/2025 19:26:53] "GET /swagger/swagger-ui.css HTTP/1.1" 304 -
+192.168.58.161 - - [28/May/2025 19:26:53] "GET /static/swagger.json HTTP/1.1" 304 -
+192.168.58.161 - - [28/May/2025 19:26:53] "GET /swagger/favicon-32x32.png HTTP/1.1" 304 -
+Sending GET command to ESP32
+Raw response from ESP32: '18.00'
+Temperature updated to: 18.0
+Sending GET command to ESP32
+192.168.58.161 - - [28/May/2025 19:26:57] "GET /temperature HTTP/1.1" 200 -
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+192.168.58.161 - - [28/May/2025 19:26:59] "GET /temperature HTTP/1.1" 200 -
+Sending GET command to ESP32
+192.168.58.161 - - [28/May/2025 19:27:00] "GET /temperature HTTP/1.1" 200 -
+Raw response from ESP32: 'Received command: 'GET''
+No temperature value found in response: 'Received command: 'GET''
+Sending GET command to ESP32
+Raw response from ESP32: '18.00'
+Temperature updated to: 18.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+[DEBUG] Attempting to send command to ESP32: 'HEATER'
+[DEBUG] Received raw response from ESP32: 'HEATER'
+[INFO] Heater action 'HEATER' initiated. Response: HEATER
+192.168.58.161 - - [28/May/2025 19:27:06] "POST /control/heater HTTP/1.1" 200 -
+Sending GET command to ESP32
+Raw response from ESP32: 'Received command: 'HEATER''
+No temperature value found in response: 'Received command: 'HEATER''
+Sending GET command to ESP32
+Raw response from ESP32: 'OK'
+No temperature value found in response: 'OK'
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: 'Received command: 'GET''
+No temperature value found in response: 'Received command: 'GET''
+Sending GET command to ESP32
+Raw response from ESP32: '19.00'
+Temperature updated to: 19.0
+192.168.58.161 - - [28/May/2025 19:27:21] "GET /temperature HTTP/1.1" 200 -
+Sending GET command to ESP32
+192.168.58.161 - - [28/May/2025 19:27:22] "GET /temperature HTTP/1.1" 200 -
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+192.168.58.161 - - [28/May/2025 19:27:22] "GET /temperature HTTP/1.1" 200 -
+192.168.58.161 - - [28/May/2025 19:27:22] "GET /temperature HTTP/1.1" 200 -
+192.168.58.161 - - [28/May/2025 19:27:23] "GET /temperature HTTP/1.1" 200 -
+192.168.58.161 - - [28/May/2025 19:27:23] "GET /temperature HTTP/1.1" 200 -
+Sending GET command to ESP32
+Raw response from ESP32: 'Received command: 'GET''
+No temperature value found in response: 'Received command: 'GET''
+Sending GET command to ESP32
+Raw response from ESP32: '26.60'
+Temperature updated to: 26.6
+192.168.58.161 - - [28/May/2025 19:27:29] "GET /temperature HTTP/1.1" 200 -
+Sending GET command to ESP32
+192.168.58.161 - - [28/May/2025 19:27:30] "GET /temperature HTTP/1.1" 200 -
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+192.168.58.161 - - [28/May/2025 19:27:30] "GET /temperature HTTP/1.1" 200 -
+192.168.58.161 - - [28/May/2025 19:27:31] "GET /temperature HTTP/1.1" 200 -
+192.168.58.161 - - [28/May/2025 19:27:31] "GET /temperature HTTP/1.1" 200 -
+Sending GET command to ESP32
+Raw response from ESP32: 'Received command: 'GET''
+No temperature value found in response: 'Received command: 'GET''
+192.168.58.161 - - [28/May/2025 19:27:33] "GET /temperature HTTP/1.1" 200 -
+Sending GET command to ESP32
+Raw response from ESP32: '32.60'
+Temperature updated to: 32.6
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: 'Received command: 'GET''
+No temperature value found in response: 'Received command: 'GET''
+Sending GET command to ESP32
+Raw response from ESP32: '40.00'
+Temperature updated to: 40.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: 'Received command: 'GET''
+No temperature value found in response: 'Received command: 'GET''
+Sending GET command to ESP32
+[DEBUG] Attempting to send command to ESP32: 'STOP'
+[DEBUG] Received raw response from ESP32: 'STOP'
+[INFO] Stop action 'STOP' initiated. Response: STOP
+192.168.58.161 - - [28/May/2025 19:27:51] "POST /control/stop HTTP/1.1" 200 -
+Raw response from ESP32: 'Received command: 'STOP''
+No temperature value found in response: 'Received command: 'STOP''
+Sending GET command to ESP32
+Raw response from ESP32: 'OK'
+No temperature value found in response: 'OK'
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: 'Received command: 'GET''
+No temperature value found in response: 'Received command: 'GET''
+Sending GET command to ESP32
+Raw response from ESP32: '40.00'
+Temperature updated to: 40.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+192.168.58.161 - - [28/May/2025 19:28:06] "GET /temperature HTTP/1.1" 200 -
+192.168.58.161 - - [28/May/2025 19:28:07] "GET /temperature HTTP/1.1" 200 -
+Sending GET command to ESP32
+192.168.58.161 - - [28/May/2025 19:28:07] "GET /temperature HTTP/1.1" 200 -
+Raw response from ESP32: 'Received command: 'GET''
+No temperature value found in response: 'Received command: 'GET''
+192.168.58.161 - - [28/May/2025 19:28:08] "GET /temperature HTTP/1.1" 200 -
+Sending GET command to ESP32
+Raw response from ESP32: '40.00'
+Temperature updated to: 40.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+[DEBUG] Attempting to send command to ESP32: 'COOLER'
+[DEBUG] Received raw response from ESP32: 'COOLER'
+[INFO] Cooler action 'COOLER' initiated. Response: COOLER
+192.168.58.161 - - [28/May/2025 19:28:15] "POST /control/cooler HTTP/1.1" 200 -
+Sending GET command to ESP32
+Raw response from ESP32: 'Received command: 'COOLER''
+No temperature value found in response: 'Received command: 'COOLER''
+Sending GET command to ESP32
+Raw response from ESP32: 'OK'
+No temperature value found in response: 'OK'
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: 'Received command: 'GET''
+No temperature value found in response: 'Received command: 'GET''
+Sending GET command to ESP32
+Raw response from ESP32: '40.00'
+Temperature updated to: 40.0
+Sending GET command to ESP32
+192.168.58.161 - - [28/May/2025 19:28:29] "GET /temperature HTTP/1.1" 200 -
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+192.168.58.161 - - [28/May/2025 19:28:30] "GET /temperature HTTP/1.1" 200 -
+192.168.58.161 - - [28/May/2025 19:28:31] "GET /temperature HTTP/1.1" 200 -
+192.168.58.161 - - [28/May/2025 19:28:31] "GET /temperature HTTP/1.1" 200 -
+Sending GET command to ESP32
+192.168.58.161 - - [28/May/2025 19:28:32] "GET /temperature HTTP/1.1" 200 -
+Raw response from ESP32: 'Received command: 'GET''
+No temperature value found in response: 'Received command: 'GET''
+Sending GET command to ESP32
+Raw response from ESP32: '37.10'
+Temperature updated to: 37.1
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: 'Received command: 'GET''
+No temperature value found in response: 'Received command: 'GET''
+Sending GET command to ESP32
+Raw response from ESP32: '28.40'
+Temperature updated to: 28.4
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: 'Received command: 'GET''
+No temperature value found in response: 'Received command: 'GET''
+Sending GET command to ESP32
+Raw response from ESP32: '19.40'
+Temperature updated to: 19.4
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+192.168.58.161 - - [28/May/2025 19:28:54] "GET /temperature HTTP/1.1" 200 -
+Sending GET command to ESP32
+Raw response from ESP32: 'Received command: 'GET''
+No temperature value found in response: 'Received command: 'GET''
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Sending GET command to ESP32
+Raw response from ESP32: 'GET'
+No temperature value found in response: 'GET'
+Sending GET command to ESP32
+Raw response from ESP32: 'Received command: 'GET''
+No temperature value found in response: 'Received command: 'GET''
+Sending GET command to ESP32
+Raw response from ESP32: '15.00'
+Temperature updated to: 15.0
+Closing serial port...
+PS D:\Facultate\Master\IoT\IoT_l12> 
