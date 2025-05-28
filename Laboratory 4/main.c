@@ -10,6 +10,12 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/event_groups.h"
+
+#include <freertos/FreeRTOS.h>
+#include <freertos/timers.h>
+
+TimerHandle_t periodicTimer;
+
 #include "esp_system.h"
 #include "esp_wifi.h"
 #include "esp_event.h"
@@ -21,19 +27,13 @@
 
 #include "lwip/sockets.h"
 #include "lwip/netdb.h"
-#include <driver/gpio.h>
-#include <lwip/netdb.h>
 
-#define GPIO_INPUT_IO 2
-#define GPIO_INPUT_PIN_SEL (1ULL<<GPIO_INPUT_IO)
-#define ESP_INTR_FLAG_DEFAULT 0
+#include "..\mdns\include\mdns.h"
+#include "..\mdns\include\mdns_console.h"
 
 #define CONFIG_ESP_WIFI_SSID      "lab-iot"
 #define CONFIG_ESP_WIFI_PASS      "IoT-IoT-IoT"
 #define CONFIG_ESP_MAXIMUM_RETRY  5
-
-#include "mdns.h"
-
 #define useLAB_2 0
 #if useLAB_2
 #define CONFIG_PEER_IP_ADDR "192.168.89.46"
@@ -58,39 +58,11 @@ static EventGroupHandle_t s_wifi_event_group;
 static const char *TAG = "wifi station";
 
 static int s_retry_num = 0;
-
-void init_gpio(void)
-{
-    gpio_config_t io_conf = {};
-    
-    io_conf.intr_type = GPIO_INTR_DISABLE;
-    io_conf.mode = GPIO_MODE_INPUT;
-    io_conf.pin_bit_mask = GPIO_INPUT_PIN_SEL;
-    io_conf.pull_down_en = 0;
-    io_conf.pull_up_en = 1;
-    gpio_config(&io_conf);
-}
-
-#if useLAB_2
-static void send_udp() {
-    char payload[8] = "GPIO4=0";
-    if (toggle == 1) {
-        payload[6] = '1';
-    }
-    int err = sendto(sock, payload, strlen(payload), 0, (struct sockaddr *)&dest_addr, sizeof(dest_addr));
-    if (err < 0) {
-        ESP_LOGE(TAG, "Error occurred during sending: errno %d", errno);
-        return;
-    }
-    ESP_LOGI(TAG, "Message sent");
-}
-#endif
-
+void vTask_handler(TimerHandle_t xTimer);
 void start_mdns_service()
 {
     //initialize mDNS service
     esp_err_t err = mdns_init();
-
     if (err) {
         printf("MDNS Init failed: %d\n", err);
         return;
@@ -103,27 +75,83 @@ void start_mdns_service()
     mdns_instance_name_set("CVTVLIN's ESP32 Thing");
 }
 
-static void query_mdns_host(const char *host_name)
+void resolve_mdns_host(const char * host_name)
 {
-    ESP_LOGI(TAG, "Query A: %s.local", host_name);
-    struct esp_ip4_addr addr;
+    printf("Query A: %s.local", host_name);
+
+    struct ip4_addr addr;
     addr.addr = 0;
 
     esp_err_t err = mdns_query_a(host_name, 2000,  &addr);
-
-    if (err) {
-        if (err == ESP_ERR_NOT_FOUND) {
-            ESP_LOGW(TAG, "%s: Host was not found!", esp_err_to_name(err));
+    if(err){
+        if(err == ESP_ERR_NOT_FOUND){
+            printf("\nHost was not found!\n");
             return;
         }
-        ESP_LOGE(TAG, "Query Failed: %s", esp_err_to_name(err));
+        printf("Query Failed");
         return;
     }
 
-    ESP_LOGI(TAG, "Query A: %s.local resolved to: " IPSTR, host_name, IP2STR(&addr));
+    printf(IPSTR, IP2STR(&addr));
 }
 
-static void event_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data)
+static const char * if_str[] = {"STA", "AP", "ETH", "MAX"};
+static const char * ip_protocol_str[] = {"V4", "V6", "MAX"};
+
+void mdns_print_results(mdns_result_t * results){
+    mdns_result_t * r = results;
+    mdns_ip_addr_t * a = NULL;
+    int i = 1, t;
+    while(r){
+        printf("%d: Interface:, Type: %s\n", i++, ip_protocol_str[r->ip_protocol]);
+        if(r->instance_name){
+            printf("  PTR : %s\n", r->instance_name);
+        }
+        if(r->hostname){
+            printf("  SRV : %s.local:%u\n", r->hostname, r->port);
+        }
+        if(r->txt_count){
+            printf("  TXT : [%u] ", r->txt_count);
+            for(t=0; t<r->txt_count; t++){
+                printf("%s=%s; ", r->txt[t].key, r->txt[t].value);
+            }
+            printf("\n");
+        }
+        a = r->addr;
+        while(a){
+            if(a->addr.type == IPADDR_TYPE_V6){
+                printf("  AAAA: " IPV6STR "\n", IPV62STR(a->addr.u_addr.ip6));
+            } else {
+                printf("  A   : " IPSTR "\n", IP2STR(&(a->addr.u_addr.ip4)));
+            }
+            a = a->next;
+        }
+        r = r->next;
+    }
+
+}
+
+void find_mdns_service(const char * service_name, const char * proto)
+{
+    ESP_LOGI(TAG, "Query PTR: %s.%s.local", service_name, proto);
+
+    mdns_result_t * results = NULL;
+    esp_err_t err = mdns_query_ptr(service_name, proto, 3000, 20,  &results);
+    if(err){
+        ESP_LOGE(TAG, "Query Failed");
+        return;
+    }
+    if(!results){
+        ESP_LOGW(TAG, "No results found!\n");
+        return;
+    }
+
+    mdns_print_results(results);
+    mdns_query_results_free(results);
+}
+
+static void event_handler(void* arg, esp_event_base_t event_base,
+                                int32_t event_id, void* event_data)
 {
     if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
         esp_wifi_connect();
@@ -211,6 +239,15 @@ static void udp_task(void *pvParameters)
     int addr_family = 0;
     int ip_protocol = 0;
 
+    /*
+    struct sockaddr_in dest_addr;
+    dest_addr.sin_addr.s_addr = inet_addr(CONFIG_PEER_IP_ADDR); // unde #define CONFIG_PEER_IP_ADDR "192.168.89.abc"
+    dest_addr.sin_family = AF_INET;
+    dest_addr.sin_port = htons(CONFIG_PEER_PORT);
+    addr_family = AF_INET;
+    ip_protocol = IPPROTO_IP;
+    */
+
     struct sockaddr_in local_addr;
     local_addr.sin_addr.s_addr = htonl(INADDR_ANY);
     local_addr.sin_family = AF_INET;
@@ -267,62 +304,6 @@ static void udp_task(void *pvParameters)
     vTaskDelete(NULL);
 }
 
-static const char * if_str[] = {"STA", "AP", "ETH", "MAX"};
-static const char * ip_protocol_str[] = {"V4", "V6", "MAX"};
-
-void mdns_print_results(mdns_result_t * results){
-    mdns_result_t * r = results;
-    mdns_ip_addr_t * a = NULL;
-    int i = 1, t;
-    while(r){
-        // TO-FIX
-        //printf("%d: Interface: %s, Type: %s\n", i++, if_str[r->esp_netif], ip_protocol_str[r->ip_protocol]);
-        if(r->instance_name){
-            printf("  PTR : %s\n", r->instance_name);
-        }
-        if(r->hostname){
-            printf("  SRV : %s.local:%u\n", r->hostname, r->port);
-        }
-        if(r->txt_count){
-            printf("  TXT : [%u] ", r->txt_count);
-            for(t=0; t<r->txt_count; t++){
-                printf("%s=%s; ", r->txt[t].key, r->txt[t].value);
-            }
-            printf("\n");
-        }
-        a = r->addr;
-        while(a){
-            if(a->addr.type == IPADDR_TYPE_V6){
-                printf("  AAAA: " IPV6STR "\n", IPV62STR(a->addr.u_addr.ip6));
-            } else {
-                printf("  A   : " IPSTR "\n", IP2STR(&(a->addr.u_addr.ip4)));
-            }
-            a = a->next;
-        }
-        r = r->next;
-    }
-
-}
-
-void find_mdns_service(const char * service_name, const char * proto)
-{
-    ESP_LOGI(TAG, "Query PTR: %s.%s.local", service_name, proto);
-
-    mdns_result_t * results = NULL;
-    esp_err_t err = mdns_query_ptr(service_name, proto, 3000, 20,  &results);
-    if(err){
-        ESP_LOGE(TAG, "Query Failed");
-        return;
-    }
-    if(!results){
-        ESP_LOGW(TAG, "No results found!");
-        return;
-    }
-
-    mdns_print_results(results);
-    mdns_query_results_free(results);
-}
-
 void app_main(void)
 {
     //Initialize NVS
@@ -333,12 +314,44 @@ void app_main(void)
     }
     ESP_ERROR_CHECK(ret);
 
-    start_mdns_service();
-    query_mdns_host("esp32_BUTACU");
-
     ESP_LOGI(TAG, "ESP_WIFI_MODE_STA");
     bool connected = wifi_init_sta();
+
     if (connected) {
+        start_mdns_service();
         xTaskCreate(udp_task, "udp_task", 4096, NULL, 5, NULL);
     }
+    
+   // xTaskCreate(vTask_handler, "vTask_handler", 4096, NULL, 5, NULL);    
+    resolve_mdns_host("esp32-Nazi");
+    
+    find_mdns_service("_services._dns-sd", "_udp");
+
+    periodicTimer = xTimerCreate(
+        "Periodic Timer",
+        pdMS_TO_TICKS(1000), 
+        pdTRUE,          
+        (void *)0,         
+        vTask_handler       
+    );
+
+    if (periodicTimer != NULL) {
+        xTimerStart(periodicTimer, 0);
+      }
+
 }
+
+
+void vTask_handler(TimerHandle_t xTimer) {
+  //  resolve_mdns_host("esp32-Nazi");
+
+   // find_mdns_service("_services._dns-sd", "_udp");
+  //  find_mdns_service("_services", "_dns-sd._udp");
+
+    //search for esp32-mdns.local
+   // resolve_mdns_host("esp32-mdns");
+
+    //search for HTTP servers
+    find_mdns_service("_http", "_tcp");
+
+  }
